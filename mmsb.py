@@ -80,9 +80,9 @@ class MMSB:
 						** self.phi[p,q,:] )
 				self.phi[q,p,:] = new_phi/np.sum(new_phi)
 
-			for k in xrange(self.K):
-				self.gamma[p,k] = self.alpha[k] + np.sum(self.phi[p,:,k]) + np.sum(self.phi[:,p,k])
-				self.gamma[q,k] = self.alpha[k] + np.sum(self.phi[q,:,k]) + np.sum(self.phi[:,q,k])
+				for k in xrange(self.K):
+					self.gamma[p,k] = self.alpha[k] + np.sum(self.phi[p,:,k]) + np.sum(self.phi[:,p,k])
+					self.gamma[q,k] = self.alpha[k] + np.sum(self.phi[q,:,k]) + np.sum(self.phi[:,q,k])
 
 		return ll
 
